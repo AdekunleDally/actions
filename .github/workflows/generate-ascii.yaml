@@ -6,13 +6,7 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v5
-            - name: Install Cowsay Program
-              run: sudo apt-get install cowsay -y
-            - name: Execute Cowsay CMD
-              run: cowsay -f dragon "Run for cover, I am a DRAGON....ROAR!" >> dragon.txt
-            - name: Test File exists
-              run: grep -i "dragon" dragon.txt
-            - name: Read File
-              run: cat dragon.txt
-            - name: List Repo Files
-              run: ls -ltra
+            - name: Executing Shell script with Permission
+              run: |
+                chmod +x .github/workflows/ascii-script.sh
+                .github/workflows/ascii-script.sh
