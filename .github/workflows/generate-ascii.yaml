@@ -36,6 +36,9 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: dragon-text-file
+            
+        - name: Read Dragon Text File
+          run: cat dragon.txt
 
         - name: Deploy
           run: echo Deploying ...
