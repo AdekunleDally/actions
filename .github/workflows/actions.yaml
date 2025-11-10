@@ -7,10 +7,8 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v5
 
-            - name: List and Read Files
-              run: |
-                echo "My first github action job"
-                ls -ltra
-                cat README.md
-            - name: Generate ASCII Artwork
-              run: cowsay -f  dragon "Run for cover, I am a dragon....RAWR!">> dragon.txt
+            - name: Make the script executable
+              run: chmod +x ./ascii-script.sh
+            
+            - name: run the script
+              run: ./ascii-script.sh
